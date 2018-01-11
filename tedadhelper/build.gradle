@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'tedadhelper'
+
+    publishedGroupId = 'gun0912.ted'
+    libraryName = 'TedAdHelper'
+    artifact = 'tedadhelper'
+
+    libraryDescription = 'Mediation advertise helper for ADMOB,FACEBOOK - Support Native, Banner, Backpress Dialog, Front AD'
+
+    siteUrl = 'https://github.com/ParkSangGwon/TedAdHelper'
+    gitUrl = 'https://github.com/ParkSangGwon/TedAdHelper.git'
+
+    libraryVersion = '1.1.6'
+
+    developerId = 'gun0912'
+    developerName = 'Ted Park'
+    developerEmail = 'gun0912@naver.com'
+
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+}
+
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile('com.android.support:appcompat-v7:25.1.0') {
+        exclude group: "com.android.support:animated-vector-drawable"
+    }
+    compile 'com.google.firebase:firebase-ads:10.0.1'
+    compile('com.facebook.android:audience-network-sdk:4.25.0') {
+        exclude group: "com.google.android.gms"
+    }
+    compile 'com.github.bumptech.glide:glide:3.6.0'
+    compile files('libs/tnkad-sdk.jar')
+
+
+}
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

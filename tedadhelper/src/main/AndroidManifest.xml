@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="gun0912.tedadhelper">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application >
+
+        <activity android:name=".backpress.TedBackPressDialog"
+                  android:theme="@style/AppTheme.DialogTheme"
+            />
+
+
+        <activity android:name="com.tnkfactory.ad.AdWallActivity" />
+        <activity android:name="com.tnkfactory.ad.AdMediaActivity" android:screenOrientation="landscape"/>
+
+
+    </application>
+
+</manifest>
